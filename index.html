@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StyleSnap - Responsive Landing Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">StyleSnap</h1>
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Trends</a></li>
+          <li><a href="#">Lookbook</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <section id="features" class="features hidden">
+    <div class="container">
+    <h3>Why Choose StyleSnap?</h3>
+    <ul>
+      <li>✨ Curate your style effortlessly</li>
+      <li>📱 Access the latest fashion trends</li>
+      <li>🤝 Connect with style enthusiasts</li>
+      <li>🔔 Get personalized recommendations</li>
+    </ul>
+    </div>
+    </section>
+
+    <div class="container hero-content">
+      <h2>Welcome to StyleSnap</h2>
+      <p>Discover, curate, and share your unique style with the world. Fashion made simple and smart.</p>
+      <a href="#" class="btn">Explore Now</a>
+    </div>
+  </section>
+
+    <section class="features-icons">
+    <div class="container">
+        <h3>What Makes StyleSnap Unique?</h3>
+        <div class="features-grid">
+        <div class="feature-item">
+            <div class="icon">👗</div>
+            <h4>Curated Styles</h4>
+            <p>Handpicked trends tailored to your taste.</p>
+        </div>
+        <div class="feature-item">
+            <div class="icon">📱</div>
+            <h4>Mobile Friendly</h4>
+            <p>Access StyleSnap anywhere, anytime.</p>
+        </div>
+        <div class="feature-item">
+            <div class="icon">🤝</div>
+            <h4>Community Driven</h4>
+            <p>Connect with fellow style enthusiasts.</p>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="testimonials">
+    <div class="container">
+        <h3>What Our Users Say</h3>
+        <div class="testimonial">
+        <p>"StyleSnap transformed how I choose my outfits every day! So easy and fun."</p>
+        <span>- Alex P.</span>
+        </div>
+        <div class="testimonial">
+        <p>"Love the community and the style tips. Feeling more confident than ever!"</p>
+        <span>- Jamie L.</span>
+        </div>
+    </div>
+    </section>
+
+    <section class="newsletter">
+    <div class="container">
+        <h3>Stay Updated</h3>
+        <p>Subscribe to our newsletter for the latest trends and exclusive offers.</p>
+        <form id="newsletter-form">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+        </form>
+        <p id="newsletter-message" class="hidden"></p>
+    </div>
+    </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 StyleSnap. All rights reserved.</p>
+      <div class="socials">
+        <a href="#">Instagram</a> |
+        <a href="#">Twitter</a> |
+        <a href="#">Pinterest</a>
+      </div>
+    </div>
+  </footer>
+    
+  <script>
+  const exploreBtn = document.querySelector('.btn');
+  const featuresSection = document.getElementById('features');
+
+  exploreBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    featuresSection.classList.remove('hidden');
+    featuresSection.classList.add('visible');
+
+    featuresSection.scrollIntoView({ behavior: 'smooth' });
+  });
+  </script>
+
+  <script>
+  const form = document.getElementById('newsletter-form');
+  const message = document.getElementById('newsletter-message');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = form.querySelector('input[type="email"]').value;
+
+    if(email) {
+      message.textContent = `Thank you for subscribing, ${email}! 🎉`;
+      message.classList.remove('hidden');
+      form.reset();
+    }
+  });
+  </script>
+
+</body>
+</html>
